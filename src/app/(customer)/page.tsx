@@ -2,6 +2,8 @@ import Image from "next/image";
 import ProductGridSection from "./_components/ProductGridSection";
 import prisma from "@/db/prismaClient";
 
+export const dynamic = 'force-dynamic'
+
 async function getMostSaledProducts() {
   const products = await prisma.product.findMany({
     where: {
